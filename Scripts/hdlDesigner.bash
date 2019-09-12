@@ -135,10 +135,7 @@ if true; then
   echo "$ISE_BASE_DIR"
   echo "  -> $ISE_WORK_DIR"
 fi
-if [ -z "$ISE_BASE_DIR" ]; then
-  echo -e "\nDon't start HDL designer directly from this script !\n"
-  exit 1
-else
+if [ -e "$ISE_BASE_DIR" ]; then
   rm -Rf $ISE_WORK_DIR
   mkdir -p $ISE_WORK_DIR
   cp -pr $ISE_BASE_DIR/* $ISE_WORK_DIR/

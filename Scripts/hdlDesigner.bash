@@ -79,7 +79,6 @@ team_prefs_directory=`realpath $team_prefs_directory`
 concat_directory=`realpath $concat_directory`
 mkdir -p $scratch_directory
 scratch_directory=`realpath $scratch_directory`
-echo "${INDENT}Concat directory is $concat_directory"
 
 #================================================================================
 # Main script
@@ -90,7 +89,7 @@ echo "${INDENT}Concat directory is $concat_directory"
 #
 export HDS_HOME=/usr/opt/HDS
 export MODELSIM_HOME=/usr/opt/Modelsim/modeltech/bin/
-export ISE_HOME=/usr/opt/Xilinx/ISE_DS/ISE
+export SYNTHESIS_HOME=/usr/opt/Xilinx/ISE_DS/ISE
 export LC_ALL=C
 export LD_LIBRARY_PATH=/usr/openwin/lib:/usr/lib:/usr/dt/lib:/usr/opt/HDS/ezwave/lib:/usr/opt/HDS/bin
 export MGLS_HOME=/usr/opt/HDS/license/mgls
@@ -105,40 +104,40 @@ export HDS_TEAM_HOME=$team_prefs_directory
 export SIMULATION_DIR=$simulation_directory
 export SCRATCH_DIR=$scratch_directory
 export CONCAT_DIR=$concat_directory
-export ISE_BASE_DIR=`realpath $design_directory/$synthesis_subdirectory`
-export ISE_WORK_DIR=$scratch_directory/$synthesis_subdirectory
+export SYNTHESIS_BASE_DIR=`realpath $design_directory/$synthesis_subdirectory`
+export SYNTHESIS_WORK_DIR=$scratch_directory/$synthesis_subdirectory
 
 #-------------------------------------------------------------------------------
 # Display info
 #
 if [ -n "$verbose" ] ; then
-  echo "$SEPARATOR"
-  echo "Launching HDL Designer"
-  echo "${INDENT}Design name          is $DESIGN_NAME"
-  echo "${INDENT}Lib matchings file   is $HDS_LIBS"
-  echo "${INDENT}Simulation directory is $SIMULATION_DIR"
-  echo "${INDENT}User prefs directory is $HDS_USER_HOME"
-  echo "${INDENT}Team prefs directory is $HDS_TEAM_HOME"
-  echo "${INDENT}Scratch directory    is $SCRATCH_DIR"
-  echo "${INDENT}Concat directory     is $CONCAT_DIR"
-  echo "${INDENT}HDS location         is $HDS_HOME"
-  echo "${INDENT}Modelsim location    is $MODELSIM_HOME"
-  echo "${INDENT}ISE location         is $ISE_HOME"
-  echo "${INDENT}ISE base directory   is $ISE_BASE_DIR"
-  echo "${INDENT}ISE work directory   is $ISE_WORK_DIR"
+  echo "Environment variables:"
+  echo "${INDENT}Design name              is $DESIGN_NAME"
+  echo "${INDENT}Lib matchings file       is $HDS_LIBS"
+  echo "${INDENT}Simulation directory     is $SIMULATION_DIR"
+  echo "${INDENT}User prefs directory     is $HDS_USER_HOME"
+  echo "${INDENT}Team prefs directory     is $HDS_TEAM_HOME"
+  echo "${INDENT}Scratch directory        is $SCRATCH_DIR"
+  echo "${INDENT}Concat directory         is $CONCAT_DIR"
+  echo "${INDENT}HDS location             is $HDS_HOME"
+  echo "${INDENT}Modelsim location        is $MODELSIM_HOME"
+  echo "${INDENT}Synthesis app location   is $SYNTHESIS_HOME"
+  echo "${INDENT}Synthesis base directory is $SYNTHESIS_BASE_DIR"
+  echo "${INDENT}Synthesis work directory is $SYNTHESIS_WORK_DIR"
 fi
 
 #-------------------------------------------------------------------------------
 # Copy synthesis data to scratch
 #
 if true; then
-  echo "$ISE_BASE_DIR"
-  echo "  -> $ISE_WORK_DIR"
+  echo "Copying"
+  echo "${INDENT}$SYNTHESIS_BASE_DIR"
+  echo "${INDENT}-> $SYNTHESIS_WORK_DIR"
 fi
-if [ -e "$ISE_BASE_DIR" ]; then
-  rm -Rf $ISE_WORK_DIR
-  mkdir -p $ISE_WORK_DIR
-  cp -pr $ISE_BASE_DIR/* $ISE_WORK_DIR/
+if [ -e "$SYNTHESIS_BASE_DIR" ]; then
+  rm -Rf $SYNTHESIS_WORK_DIR
+  mkdir -p $SYNTHESIS_WORK_DIR
+  cp -pr $SYNTHESIS_BASE_DIR/* $SYNTHESIS_WORK_DIR/
 fi
 
 #-------------------------------------------------------------------------------

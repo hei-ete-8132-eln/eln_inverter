@@ -21,8 +21,8 @@ libraryRefs [
 "gates"
 ]
 )
-version "26.1"
-appVersion "2018.1 (Build 12)"
+version "27.1"
+appVersion "2019.2 (Build 5)"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
@@ -377,23 +377,23 @@ value " "
 )
 (vvPair
 variable "HDLDir"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hdl"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hdl"
 )
 (vvPair
 variable "HDSDir"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds"
 )
 (vvPair
 variable "SideDataDesignDir"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed\\symbol.sb.info"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed\\symbol.sb.info"
 )
 (vvPair
 variable "SideDataUserDir"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed\\symbol.sb.user"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed\\symbol.sb.user"
 )
 (vvPair
 variable "SourceDir"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds"
 )
 (vvPair
 variable "appl"
@@ -413,27 +413,27 @@ value "%(unit)_%(view)_config"
 )
 (vvPair
 variable "d"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed"
 )
 (vvPair
 variable "d_logical"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\onesSigned"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\onesSigned"
 )
 (vvPair
 variable "date"
-value "11.09.2019"
+value "12/ 9/2019"
 )
 (vvPair
 variable "day"
-value "Wed"
+value "Mon"
 )
 (vvPair
 variable "day_long"
-value "Wednesday"
+value "Monday"
 )
 (vvPair
 variable "dd"
-value "11"
+value "09"
 )
 (vvPair
 variable "designName"
@@ -461,11 +461,11 @@ value "symbol"
 )
 (vvPair
 variable "graphical_source_author"
-value "silvan.zahno"
+value "zas"
 )
 (vvPair
 variable "graphical_source_date"
-value "11.09.2019"
+value "12/ 9/2019"
 )
 (vvPair
 variable "graphical_source_group"
@@ -473,11 +473,11 @@ value "UNKNOWN"
 )
 (vvPair
 variable "graphical_source_host"
-value "WE6996"
+value "ZELL"
 )
 (vvPair
 variable "graphical_source_time"
-value "14:35:10"
+value "15:02:18"
 )
 (vvPair
 variable "group"
@@ -485,7 +485,7 @@ value "UNKNOWN"
 )
 (vvPair
 variable "host"
-value "WE6996"
+value "ZELL"
 )
 (vvPair
 variable "language"
@@ -501,7 +501,7 @@ value "$SCRATCH_DIR/ElN/Libraries/Gates/work"
 )
 (vvPair
 variable "mm"
-value "09"
+value "12"
 )
 (vvPair
 variable "module_name"
@@ -509,19 +509,19 @@ value "onesSigned"
 )
 (vvPair
 variable "month"
-value "Sep"
+value "Dec"
 )
 (vvPair
 variable "month_long"
-value "September"
+value "December"
 )
 (vvPair
 variable "p"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed\\symbol.sb"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\ones@signed\\symbol.sb"
 )
 (vvPair
 variable "p_logical"
-value "C:\\work\\git\\Education\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\onesSigned\\symbol.sb"
+value "C:\\work\\repo\\edu\\eln\\labo\\solution\\eln_labs\\Libs\\Gates\\hds\\onesSigned\\symbol.sb"
 )
 (vvPair
 variable "package_name"
@@ -597,7 +597,7 @@ value "symbol"
 )
 (vvPair
 variable "time"
-value "14:35:10"
+value "15:02:18"
 )
 (vvPair
 variable "unit"
@@ -605,11 +605,11 @@ value "onesSigned"
 )
 (vvPair
 variable "user"
-value "silvan.zahno"
+value "zas"
 )
 (vvPair
 variable "version"
-value "2018.1 (Build 12)"
+value "2019.2 (Build 5)"
 )
 (vvPair
 variable "view"
@@ -636,24 +636,24 @@ uid 22,0
 ps "OnEdgeStrategy"
 shape (Triangle
 uid 23,0
+ro 180
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "36625,14250,37375,15000"
+xt "39625,20000,40375,20750"
 )
 tg (CPTG
 uid 39,0
 ps "CptPortTextPlaceStrategy"
-stg "RightVerticalLayoutStrategy"
+stg "VerticalLayoutStrategy"
 f (Text
 uid 25,0
 va (VaSet
 )
-xt "26900,15000,40500,16200"
+xt "41000,18800,54600,20000"
 st "ones : (dataBitNb-1:0)"
-ju 2
-blo "40500,16000"
+blo "41000,19800"
 tm "CptPortNameMgr"
 )
 )
@@ -677,8 +677,7 @@ suid 2,0
 )
 )
 ]
-shape (Pd
-uid 255,0
+shape (Pu
 va (VaSet
 vasetType 1
 fg "0,65535,0"
@@ -686,7 +685,7 @@ bg "0,65535,0"
 lineColor "0,32896,0"
 lineWidth 2
 )
-xt "34000,15000,39000,21000"
+xt "37000,14000,42000,20000"
 )
 showPorts 0
 oxt "15000,18000,21000,24000"
@@ -699,18 +698,18 @@ uid 11,0
 va (VaSet
 font "Verdana,8,1"
 )
-xt "33910,20700,37010,21700"
+xt "33910,17700,37010,18700"
 st "gates"
-blo "33910,21500"
+blo "33910,18500"
 )
 second (Text
 uid 12,0
 va (VaSet
 font "Verdana,8,1"
 )
-xt "33910,21700,40510,22700"
+xt "33910,18700,40510,19700"
 st "onesSigned"
-blo "33910,22500"
+blo "33910,19500"
 )
 )
 gi *57 (GenericInterface
@@ -723,7 +722,7 @@ uid 15,0
 va (VaSet
 font "Verdana,8,0"
 )
-xt "34000,23600,44200,26600"
+xt "41000,20000,51200,23000"
 st "Generic Declarations
 
 dataBitNb positive 8  "
@@ -1113,8 +1112,8 @@ tm "PackageList"
 )
 ]
 )
-windowSize "176,47,1424,880"
-viewArea "-1100,-1100,84364,50668"
+windowSize "761,40,1543,871"
+viewArea "-1100,-1100,50876,48321"
 cachedDiagramExtent "0,0,73000,49000"
 hasePageBreakOrigin 1
 pageBreakOrigin "0,0"
@@ -1384,6 +1383,6 @@ xt "2000,17600,2000,17600"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 418,0
+lastUid 441,0
 activeModelName "Symbol"
 )

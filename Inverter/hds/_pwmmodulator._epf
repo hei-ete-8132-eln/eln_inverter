@@ -1,2 +1,2 @@
 DEFAULT_FILE atom pwmModulator_RTL.vhd
-DEFAULT_ARCHITECTURE atom studentVersion
+DEFAULT_ARCHITECTURE atom masterVersion

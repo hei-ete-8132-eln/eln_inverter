@@ -16,8 +16,8 @@ libraryRefs [
 "ieee"
 ]
 )
-version "31.1"
-appVersion "2018.1 (Build 12)"
+version "32.1"
+appVersion "2019.3 (Build 4)"
 noEmbeddedEditors 1
 model (BlockDiag
 VExpander (VariableExpander
@@ -72,19 +72,19 @@ value "/home/francois/Documents/HEVs/ElN/Labs/ElN_inverter/Prefs/../Inverter/hds
 )
 (vvPair
 variable "date"
-value "10/23/19"
+value "12/16/19"
 )
 (vvPair
 variable "day"
-value "Wed"
+value "Mon"
 )
 (vvPair
 variable "day_long"
-value "Wednesday"
+value "Monday"
 )
 (vvPair
 variable "dd"
-value "23"
+value "16"
 )
 (vvPair
 variable "designName"
@@ -116,7 +116,7 @@ value "francois"
 )
 (vvPair
 variable "graphical_source_date"
-value "10/23/19"
+value "12/16/19"
 )
 (vvPair
 variable "graphical_source_group"
@@ -128,7 +128,7 @@ value "Aphelia"
 )
 (vvPair
 variable "graphical_source_time"
-value "13:23:20"
+value "17:54:24"
 )
 (vvPair
 variable "group"
@@ -152,7 +152,7 @@ value "$SCRATCH_DIR/$DESIGN_NAME/Inverter/work"
 )
 (vvPair
 variable "mm"
-value "10"
+value "12"
 )
 (vvPair
 variable "module_name"
@@ -160,11 +160,11 @@ value "pwmModulator"
 )
 (vvPair
 variable "month"
-value "Oct"
+value "Dec"
 )
 (vvPair
 variable "month_long"
-value "October"
+value "December"
 )
 (vvPair
 variable "p"
@@ -216,7 +216,7 @@ value "studentVersion"
 )
 (vvPair
 variable "time"
-value "13:23:20"
+value "17:54:24"
 )
 (vvPair
 variable "unit"
@@ -228,7 +228,7 @@ value "francois"
 )
 (vvPair
 variable "version"
-value "2018.1 (Build 12)"
+value "2019.3 (Build 4)"
 )
 (vvPair
 variable "view"
@@ -309,8 +309,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2400,45000,3300"
-st "amplitude       : signed(pwmBitNb-1 downto 0)
-"
+st "amplitude       : signed(pwmBitNb-1 downto 0)"
 )
 )
 *3 (PortIoIn
@@ -374,8 +373,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,3300,36500,4200"
-st "clock           : std_ulogic
-"
+st "clock           : std_ulogic"
 )
 )
 *5 (PortIoIn
@@ -439,8 +437,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,4200,36500,5100"
-st "doubleFrequency : std_ulogic
-"
+st "doubleFrequency : std_ulogic"
 )
 )
 *7 (PortIoIn
@@ -504,8 +501,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,5100,36500,6000"
-st "en              : std_ulogic
-"
+st "en              : std_ulogic"
 )
 )
 *9 (PortIoOut
@@ -568,8 +564,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,8700,36500,9600"
-st "pwm1            : std_ulogic
-"
+st "pwm1            : std_ulogic"
 )
 )
 *11 (PortIoOut
@@ -632,8 +627,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,9600,36500,10500"
-st "pwm2            : std_ulogic
-"
+st "pwm2            : std_ulogic"
 )
 )
 *13 (PortIoIn
@@ -697,8 +691,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,6000,36500,6900"
-st "reset           : std_ulogic
-"
+st "reset           : std_ulogic"
 )
 )
 *15 (PortIoIn
@@ -762,8 +755,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,6900,36500,7800"
-st "switchEvenOdd   : std_ulogic
-"
+st "switchEvenOdd   : std_ulogic"
 )
 )
 *17 (PortIoIn
@@ -827,8 +819,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,7800,36500,8700"
-st "threeLevel      : std_ulogic
-"
+st "threeLevel      : std_ulogic"
 )
 )
 *19 (Grouping
@@ -913,7 +904,7 @@ va (VaSet
 fg "0,0,32768"
 bg "0,0,32768"
 )
-xt "24200,47500,41600,48500"
+xt "24200,47500,40400,48500"
 st "
 by %user on %dd %month %year
 "
@@ -1592,12 +1583,29 @@ tm "BdCompilerDirectivesTextMgr"
 ]
 associable 1
 )
-windowSize "141,34,1375,886"
-viewArea "-4118,-1084,72275,50397"
+windowSize "133,40,1367,892"
+viewArea "-4067,-1089,72413,50654"
 cachedDiagramExtent "-13400,0,70000,49000"
+pageSetupInfo (PageSetupInfo
+toPrinter 1
+xMargin 49
+yMargin 49
+paperWidth 595
+paperHeight 842
+unixPaperWidth 595
+unixPaperHeight 842
+paperType "A4  (210mm x 297mm)"
+unixPaperName "A4  (210mm x 297mm)"
+exportedDirectories [
+"$HDS_PROJECT_DIR/HTMLExport"
+]
+boundaryWidth 0
+exportStdIncludeRefs 1
+exportStdPackageRefs 1
+)
 hasePageBreakOrigin 1
 pageBreakOrigin "-3000,0"
-lastUid 295,0
+lastUid 336,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0

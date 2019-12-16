@@ -365,6 +365,14 @@ first "concat_file"
 second "concatenated"
 )
 ]
+defaultCategoryTemplates [
+1
+"architecture.vhd"
+]
+defaultCategoryTemplatesPrefs [
+1
+0
+]
 tasksOrder [
 "USER:Generate"
 "USER:ModelSim Compile"
@@ -5542,8 +5550,8 @@ size 59
 )
 ]
 displayHierarchy 0
-xPos 213
-yPos 42
+xPos 1739
+yPos 58
 width 1066
 height 937
 activeSidePanelTab 2

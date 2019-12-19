@@ -11,8 +11,12 @@ ARCHITECTURE tesrt OF pwmModulator_tester IS
   constant outAmplitude: real := 0.95;
   signal tReal: real := 0.0;
   signal outReal: real := 0.0;
-                                                          -- outputs for display
+                                                                      -- lowpass
+--  constant lowpassShift: positive := 11;
+  constant lowpassShift: positive := 12;
   signal pwm: integer;
+  signal lowpassAccumulator1, lowpassAccumulator2: real := 0.0;
+  signal lowpassOutput1, lowpassOutput2: real := 0.0;
   signal pwmFiltered: real := 0.0;
 
 BEGIN
@@ -54,11 +58,29 @@ BEGIN
   );
 
   ------------------------------------------------------------------------------
-                                                          -- outputs for display
+                                                                      -- lowpass
   pwm <= 1 when (pwm1 = '1') and (pwm2 = '0')
     else -1 when (pwm1 = '0') and (pwm2 = '1')
     else 0;
 
-  pwmFiltered <= lowpass1 - lowpass2;
+  lowpassIntegrator: process
+  begin
+    wait until rising_edge(sClock);
+    if pwm1 = '1' then
+      lowpassAccumulator1 <= lowpassAccumulator1 - lowpassOutput1 + 1.0;
+    else
+      lowpassAccumulator1 <= lowpassAccumulator1 - lowpassOutput1 - 1.0;
+    end if;
+    if pwm2 = '1' then
+      lowpassAccumulator2 <= lowpassAccumulator2 - lowpassOutput2 + 1.0;
+    else
+      lowpassAccumulator2 <= lowpassAccumulator2 - lowpassOutput2 - 1.0;
+    end if;
+  end process lowpassIntegrator;
+
+  lowpassOutput1 <= lowpassAccumulator1 / 2.0**lowpassShift;
+  lowpassOutput2 <= lowpassAccumulator2 / 2.0**lowpassShift;
+
+  pwmFiltered <= lowpassOutput1 - lowpassOutput2;
 
 END ARCHITECTURE tesrt;

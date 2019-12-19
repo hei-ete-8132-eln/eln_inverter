@@ -1,2 +1,2 @@
 DEFAULT_FILE atom phaseCounter_RTL.vhd
-DEFAULT_ARCHITECTURE atom masterVersion
+DEFAULT_ARCHITECTURE atom studentVersion

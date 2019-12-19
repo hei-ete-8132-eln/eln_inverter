@@ -10,6 +10,8 @@ ARCHITECTURE test OF inverterControl_tester IS
   constant lowpassShift: positive := 12;
   signal pwm1, pwm2: std_uLogic;
   signal pwm: integer;
+  signal lowpassAccumulator1, lowpassAccumulator2: real := 0.0;
+  signal lowpassOutput1, lowpassOutput2: real := 0.0;
   signal pwmFiltered: real := 0.0;
                                                            -- period measurement
   signal lastTriggerRisingEdge : time := 0 sec;
@@ -45,7 +47,7 @@ BEGIN
   pwmCountEn <= '1';
 
   ------------------------------------------------------------------------------
-                                                                  -- PWM signals
+                                                                      -- lowpass
   pwm1 <= '1' when pwm1High = '1'
     else '0' when pwm1Low_n = '1';
 
@@ -56,7 +58,25 @@ BEGIN
     else -1 when (pwm1 = '0') and (pwm2 = '1')
     else 0;
 
-  pwmFiltered <= lowpass1 - lowpass2;
+  lowpassIntegrator: process
+  begin
+    wait until rising_edge(sClock);
+    if pwm1 = '1' then
+      lowpassAccumulator1 <= lowpassAccumulator1 - lowpassOutput1 + 1.0;
+    else
+      lowpassAccumulator1 <= lowpassAccumulator1 - lowpassOutput1 - 1.0;
+    end if;
+    if pwm2 = '1' then
+      lowpassAccumulator2 <= lowpassAccumulator2 - lowpassOutput2 + 1.0;
+    else
+      lowpassAccumulator2 <= lowpassAccumulator2 - lowpassOutput2 - 1.0;
+    end if;
+  end process lowpassIntegrator;
+
+  lowpassOutput1 <= lowpassAccumulator1 / 2.0**lowpassShift;
+  lowpassOutput2 <= lowpassAccumulator2 / 2.0**lowpassShift;
+
+  pwmFiltered <= lowpassOutput1 - lowpassOutput2;
 
   ------------------------------------------------------------------------------
                                                            -- period measurement

@@ -46,7 +46,7 @@ settingsMap [
 "GlitchGeneration"
 "1"
 "InitCmd"
-"$SIMULATION_DIR/nonOverlap.do"
+"$SIMULATION_DIR/pwmModulator.do"
 "LogFile"
 ""
 "RemoteHost"

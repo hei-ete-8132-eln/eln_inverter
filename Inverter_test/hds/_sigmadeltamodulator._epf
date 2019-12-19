@@ -1,0 +1,2 @@
+DEFAULT_FILE atom sigmaDeltaModulator_sim.vhd
+DEFAULT_ARCHITECTURE atom sim

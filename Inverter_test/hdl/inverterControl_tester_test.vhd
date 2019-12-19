@@ -10,9 +10,6 @@ ARCHITECTURE test OF inverterControl_tester IS
   constant lowpassShift: positive := 12;
   signal pwm1, pwm2: std_uLogic;
   signal pwm: integer;
-  signal lowpassAccumulator1, lowpassAccumulator2: real := 0.0;
-  signal lowpassOutput1, lowpassOutput2: real := 0.0;
-  signal pwmFiltered: real := 0.0;
                                                            -- period measurement
   signal lastTriggerRisingEdge : time := 0 sec;
   signal measuredPeriod : time := mainsPeriod;
@@ -41,13 +38,23 @@ BEGIN
   doubleFrequency <= '0', '1' after 3*modePeriod;
 
   ------------------------------------------------------------------------------
+                                                         -- power supply control
+  controlSupplyVoltage: process
+  begin
+    supplyVoltage <= 12.0;
+
+    wait;
+  end process controlSupplyVoltage;
+
+
+  ------------------------------------------------------------------------------
                                                               -- sampling enable
   sampleEn <= '1';
                                                              -- PWM count enable
   pwmCountEn <= '1';
 
   ------------------------------------------------------------------------------
-                                                                      -- lowpass
+                                                                  -- PWM signals
   pwm1 <= '1' when pwm1High = '1'
     else '0' when pwm1Low_n = '1';
 
@@ -57,26 +64,6 @@ BEGIN
   pwm <= 1 when (pwm1 = '1') and (pwm2 = '0')
     else -1 when (pwm1 = '0') and (pwm2 = '1')
     else 0;
-
-  lowpassIntegrator: process
-  begin
-    wait until rising_edge(sClock);
-    if pwm1 = '1' then
-      lowpassAccumulator1 <= lowpassAccumulator1 - lowpassOutput1 + 1.0;
-    else
-      lowpassAccumulator1 <= lowpassAccumulator1 - lowpassOutput1 - 1.0;
-    end if;
-    if pwm2 = '1' then
-      lowpassAccumulator2 <= lowpassAccumulator2 - lowpassOutput2 + 1.0;
-    else
-      lowpassAccumulator2 <= lowpassAccumulator2 - lowpassOutput2 - 1.0;
-    end if;
-  end process lowpassIntegrator;
-
-  lowpassOutput1 <= lowpassAccumulator1 / 2.0**lowpassShift;
-  lowpassOutput2 <= lowpassAccumulator2 / 2.0**lowpassShift;
-
-  pwmFiltered <= lowpassOutput1 - lowpassOutput2;
 
   ------------------------------------------------------------------------------
                                                            -- period measurement

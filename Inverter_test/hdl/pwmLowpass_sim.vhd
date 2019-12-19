@@ -1,6 +1,6 @@
 ARCHITECTURE sim OF pwmLowpass IS
 
-  constant samplingPeriod: time := 1.0/clockFrequency * 1 sec;
+  constant samplingPeriod: time := 1.0/samplingFrequency * 1 sec;
   signal accumulator, lowpassOutput: real := 0.0;
 
 BEGIN

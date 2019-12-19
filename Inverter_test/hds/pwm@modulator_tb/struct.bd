@@ -57,25 +57,6 @@ mwi 0
 uid 2836,0
 )
 (Instance
-name "I_lp1"
-duLibraryName "Inverter_test"
-duName "pwmLowpass"
-elements [
-(GiElement
-name "clockFrequency"
-type "real"
-value "clockFrequency"
-)
-(GiElement
-name "lowpassShift"
-type "positive"
-value "lowpassShift"
-)
-]
-mwi 0
-uid 3245,0
-)
-(Instance
 name "I_lp2"
 duLibraryName "Inverter_test"
 duName "pwmLowpass"
@@ -92,7 +73,26 @@ value "lowpassShift"
 )
 ]
 mwi 0
-uid 3254,0
+uid 3362,0
+)
+(Instance
+name "I_lp1"
+duLibraryName "Inverter_test"
+duName "pwmLowpass"
+elements [
+(GiElement
+name "clockFrequency"
+type "real"
+value "clockFrequency"
+)
+(GiElement
+name "lowpassShift"
+type "positive"
+value "lowpassShift"
+)
+]
+mwi 0
+uid 3379,0
 )
 ]
 libraryRefs [
@@ -155,19 +155,19 @@ value "/home/francois/Documents/HEVs/ElN/Labs/ElN_inverter/Prefs/../Inverter_tes
 )
 (vvPair
 variable "date"
-value "12/16/19"
+value "12/17/19"
 )
 (vvPair
 variable "day"
-value "Mon"
+value "Tue"
 )
 (vvPair
 variable "day_long"
-value "Monday"
+value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "16"
+value "17"
 )
 (vvPair
 variable "designName"
@@ -199,7 +199,7 @@ value "francois"
 )
 (vvPair
 variable "graphical_source_date"
-value "12/16/19"
+value "12/17/19"
 )
 (vvPair
 variable "graphical_source_group"
@@ -211,7 +211,7 @@ value "Aphelia"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:33:26"
+value "12:01:47"
 )
 (vvPair
 variable "group"
@@ -335,7 +335,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "18:33:26"
+value "12:01:47"
 )
 (vvPair
 variable "unit"
@@ -692,7 +692,7 @@ fg "39936,56832,65280"
 lineColor "0,0,32768"
 lineWidth 2
 )
-xt "8000,69000,87000,77000"
+xt "8000,69000,86000,77000"
 )
 oxt "0,0,8000,10000"
 ttg (MlTextGroup
@@ -1330,34 +1330,71 @@ xt "0,0,15000,900"
 st "SIGNAL lowpass1        : real"
 )
 )
-*38 (SaComponent
-uid 3245,0
+*38 (Net
+uid 3289,0
+lang 11
+decl (Decl
+n "lowpass2"
+t "real"
+o 11
+suid 25,0
+)
+declText (MLText
+uid 3290,0
+va (VaSet
+isHidden 1
+font "courier,9,0"
+)
+xt "0,0,15000,900"
+st "SIGNAL lowpass2        : real"
+)
+)
+*39 (Net
+uid 3293,0
+decl (Decl
+n "pwm1"
+t "std_ulogic"
+o 11
+suid 26,0
+)
+declText (MLText
+uid 3294,0
+va (VaSet
+isHidden 1
+font "courier,9,0"
+)
+xt "0,0,18000,900"
+st "SIGNAL pwm1            : std_ulogic"
+)
+)
+*40 (SaComponent
+uid 3362,0
 optionalChildren [
-*39 (CptPort
-uid 3237,0
+*41 (CptPort
+uid 3354,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 3238,0
+uid 3355,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "73000,40625,73750,41375"
+xt "72000,56625,72750,57375"
 )
 tg (CPTG
-uid 3239,0
+uid 3356,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 3240,0
+uid 3357,0
 va (VaSet
 font "courier,8,0"
 )
-xt "66500,40550,72000,41450"
+xt "65500,56550,71000,57450"
 st "lowpassOut"
 ju 2
-blo "72000,41250"
+blo "71000,57250"
 )
 )
 thePort (LogicalPort
@@ -1371,170 +1408,11 @@ suid 5,0
 )
 )
 )
-*40 (CptPort
-uid 3241,0
+*42 (CptPort
+uid 3358,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 3242,0
-ro 90
-va (VaSet
-vasetType 1
-fg "0,65535,0"
-)
-xt "55250,40625,56000,41375"
-)
-tg (CPTG
-uid 3243,0
-ps "CptPortTextPlaceStrategy"
-stg "VerticalLayoutStrategy"
-f (Text
-uid 3244,0
-va (VaSet
-font "courier,8,0"
-)
-xt "57000,40550,58500,41450"
-st "pwm"
-blo "57000,41250"
-)
-)
-thePort (LogicalPort
-decl (Decl
-n "pwm"
-t "std_ulogic"
-o 4
-suid 6,0
-)
-)
-)
-]
-shape (Rectangle
-uid 3246,0
-va (VaSet
-vasetType 1
-fg "0,65535,0"
-lineColor "0,32896,0"
-lineWidth 2
-)
-xt "56000,37000,73000,45000"
-)
-oxt "30000,12000,47000,20000"
-ttg (MlTextGroup
-uid 3247,0
-ps "CenterOffsetStrategy"
-stg "VerticalLayoutStrategy"
-textVec [
-*41 (Text
-uid 3248,0
-va (VaSet
-font "courier,8,1"
-)
-xt "56000,45100,63000,46000"
-st "Inverter_test"
-blo "56000,45800"
-tm "BdLibraryNameMgr"
-)
-*42 (Text
-uid 3249,0
-va (VaSet
-font "courier,8,1"
-)
-xt "56000,46000,61500,46900"
-st "pwmLowpass"
-blo "56000,46700"
-tm "CptNameMgr"
-)
-*43 (Text
-uid 3250,0
-va (VaSet
-font "courier,8,1"
-)
-xt "56000,46900,58500,47800"
-st "I_lp1"
-blo "56000,47600"
-tm "InstanceNameMgr"
-)
-]
-)
-ga (GenericAssociation
-uid 3251,0
-ps "EdgeToEdgeStrategy"
-matrix (Matrix
-uid 3252,0
-text (MLText
-uid 3253,0
-va (VaSet
-font "courier,8,0"
-)
-xt "56000,48400,81000,50200"
-st "clockFrequency = clockFrequency    ( real     )  
-lowpassShift   = lowpassShift      ( positive )  "
-)
-header ""
-)
-elements [
-(GiElement
-name "clockFrequency"
-type "real"
-value "clockFrequency"
-)
-(GiElement
-name "lowpassShift"
-type "positive"
-value "lowpassShift"
-)
-]
-)
-portVis (PortSigDisplay
-sTC 0
-sF 0
-)
-archFileType "UNKNOWN"
-)
-*44 (SaComponent
-uid 3254,0
-optionalChildren [
-*45 (CptPort
-uid 3263,0
-ps "OnEdgeStrategy"
-shape (Triangle
-uid 3264,0
-ro 90
-va (VaSet
-vasetType 1
-fg "0,65535,0"
-)
-xt "73000,56625,73750,57375"
-)
-tg (CPTG
-uid 3265,0
-ps "CptPortTextPlaceStrategy"
-stg "RightVerticalLayoutStrategy"
-f (Text
-uid 3266,0
-va (VaSet
-font "courier,8,0"
-)
-xt "66500,56550,72000,57450"
-st "lowpassOut"
-ju 2
-blo "72000,57250"
-)
-)
-thePort (LogicalPort
-lang 11
-m 1
-decl (Decl
-n "lowpassOut"
-t "real"
-o 10
-)
-)
-)
-*46 (CptPort
-uid 3267,0
-ps "OnEdgeStrategy"
-shape (Triangle
-uid 3268,0
+uid 3359,0
 ro 90
 va (VaSet
 vasetType 1
@@ -1543,11 +1421,11 @@ fg "0,65535,0"
 xt "55250,56625,56000,57375"
 )
 tg (CPTG
-uid 3269,0
+uid 3360,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 3270,0
+uid 3361,0
 va (VaSet
 font "courier,8,0"
 )
@@ -1561,28 +1439,29 @@ decl (Decl
 n "pwm"
 t "std_ulogic"
 o 4
+suid 6,0
 )
 )
 )
 ]
 shape (Rectangle
-uid 3255,0
+uid 3363,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 lineColor "0,32896,0"
 lineWidth 2
 )
-xt "56000,53000,73000,61000"
+xt "56000,53000,72000,61000"
 )
-oxt "30000,12000,47000,20000"
+oxt "30000,12000,46000,20000"
 ttg (MlTextGroup
-uid 3256,0
+uid 3364,0
 ps "CenterOffsetStrategy"
 stg "VerticalLayoutStrategy"
 textVec [
-*47 (Text
-uid 3257,0
+*43 (Text
+uid 3365,0
 va (VaSet
 font "courier,8,1"
 )
@@ -1591,8 +1470,8 @@ st "Inverter_test"
 blo "56000,61800"
 tm "BdLibraryNameMgr"
 )
-*48 (Text
-uid 3258,0
+*44 (Text
+uid 3366,0
 va (VaSet
 font "courier,8,1"
 )
@@ -1601,8 +1480,8 @@ st "pwmLowpass"
 blo "56000,62700"
 tm "CptNameMgr"
 )
-*49 (Text
-uid 3259,0
+*45 (Text
+uid 3367,0
 va (VaSet
 font "courier,8,1"
 )
@@ -1614,12 +1493,12 @@ tm "InstanceNameMgr"
 ]
 )
 ga (GenericAssociation
-uid 3260,0
+uid 3368,0
 ps "EdgeToEdgeStrategy"
 matrix (Matrix
-uid 3261,0
+uid 3369,0
 text (MLText
-uid 3262,0
+uid 3370,0
 va (VaSet
 font "courier,8,0"
 )
@@ -1648,42 +1527,165 @@ sF 0
 )
 archFileType "UNKNOWN"
 )
-*50 (Net
-uid 3289,0
+*46 (SaComponent
+uid 3379,0
+optionalChildren [
+*47 (CptPort
+uid 3371,0
+ps "OnEdgeStrategy"
+shape (Triangle
+uid 3372,0
+ro 90
+va (VaSet
+vasetType 1
+fg "0,65535,0"
+)
+xt "72000,40625,72750,41375"
+)
+tg (CPTG
+uid 3373,0
+ps "CptPortTextPlaceStrategy"
+stg "RightVerticalLayoutStrategy"
+f (Text
+uid 3374,0
+va (VaSet
+font "courier,8,0"
+)
+xt "65500,40550,71000,41450"
+st "lowpassOut"
+ju 2
+blo "71000,41250"
+)
+)
+thePort (LogicalPort
 lang 11
+m 1
 decl (Decl
-n "lowpass2"
+n "lowpassOut"
 t "real"
-o 11
-suid 25,0
+o 10
+suid 5,0
 )
-declText (MLText
-uid 3290,0
+)
+)
+*48 (CptPort
+uid 3375,0
+ps "OnEdgeStrategy"
+shape (Triangle
+uid 3376,0
+ro 90
 va (VaSet
-isHidden 1
-font "courier,9,0"
+vasetType 1
+fg "0,65535,0"
 )
-xt "0,0,15000,900"
-st "SIGNAL lowpass2        : real"
+xt "55250,40625,56000,41375"
+)
+tg (CPTG
+uid 3377,0
+ps "CptPortTextPlaceStrategy"
+stg "VerticalLayoutStrategy"
+f (Text
+uid 3378,0
+va (VaSet
+font "courier,8,0"
+)
+xt "57000,40550,58500,41450"
+st "pwm"
+blo "57000,41250"
 )
 )
-*51 (Net
-uid 3293,0
+thePort (LogicalPort
 decl (Decl
-n "pwm1"
+n "pwm"
 t "std_ulogic"
-o 11
-suid 26,0
+o 4
+suid 6,0
 )
-declText (MLText
-uid 3294,0
+)
+)
+]
+shape (Rectangle
+uid 3380,0
 va (VaSet
-isHidden 1
-font "courier,9,0"
+vasetType 1
+fg "0,65535,0"
+lineColor "0,32896,0"
+lineWidth 2
 )
-xt "0,0,18000,900"
-st "SIGNAL pwm1            : std_ulogic"
+xt "56000,37000,72000,45000"
 )
+oxt "30000,12000,46000,20000"
+ttg (MlTextGroup
+uid 3381,0
+ps "CenterOffsetStrategy"
+stg "VerticalLayoutStrategy"
+textVec [
+*49 (Text
+uid 3382,0
+va (VaSet
+font "courier,8,1"
+)
+xt "56000,45100,63000,46000"
+st "Inverter_test"
+blo "56000,45800"
+tm "BdLibraryNameMgr"
+)
+*50 (Text
+uid 3383,0
+va (VaSet
+font "courier,8,1"
+)
+xt "56000,46000,61500,46900"
+st "pwmLowpass"
+blo "56000,46700"
+tm "CptNameMgr"
+)
+*51 (Text
+uid 3384,0
+va (VaSet
+font "courier,8,1"
+)
+xt "56000,46900,58500,47800"
+st "I_lp1"
+blo "56000,47600"
+tm "InstanceNameMgr"
+)
+]
+)
+ga (GenericAssociation
+uid 3385,0
+ps "EdgeToEdgeStrategy"
+matrix (Matrix
+uid 3386,0
+text (MLText
+uid 3387,0
+va (VaSet
+font "courier,8,0"
+)
+xt "56000,48400,81000,50200"
+st "clockFrequency = clockFrequency    ( real     )  
+lowpassShift   = lowpassShift      ( positive )  "
+)
+header ""
+)
+elements [
+(GiElement
+name "clockFrequency"
+type "real"
+value "clockFrequency"
+)
+(GiElement
+name "lowpassShift"
+type "positive"
+value "lowpassShift"
+)
+]
+)
+portVis (PortSigDisplay
+sTC 0
+sF 0
+)
+archFileType "UNKNOWN"
 )
 *52 (Wire
 uid 2847,0
@@ -1983,7 +1985,7 @@ pts [
 ]
 )
 start &22
-end &46
+end &42
 sat 32
 eat 32
 stc 0
@@ -2014,16 +2016,15 @@ va (VaSet
 vasetType 3
 lineWidth 2
 )
-xt "73750,41000,79000,69000"
+xt "72750,41000,78000,69000"
 pts [
-"73750,41000"
-"79000,41000"
-"79000,69000"
+"72750,41000"
+"78000,41000"
+"78000,69000"
 ]
 )
-start &39
+start &47
 end &12
-ss 0
 sat 32
 eat 1
 sty 1
@@ -2040,9 +2041,9 @@ uid 3207,0
 va (VaSet
 font "courier,12,0"
 )
-xt "76000,39700,81600,41000"
+xt "75000,39700,80600,41000"
 st "lowpass1"
-blo "76000,40700"
+blo "75000,40700"
 tm "WireNameMgr"
 )
 )
@@ -2096,14 +2097,14 @@ va (VaSet
 vasetType 3
 lineWidth 2
 )
-xt "73750,57000,77000,69000"
+xt "72750,57000,76000,69000"
 pts [
-"73750,57000"
-"77000,57000"
-"77000,69000"
+"72750,57000"
+"76000,57000"
+"76000,69000"
 ]
 )
-start &45
+start &41
 end &12
 sat 32
 eat 1
@@ -2120,13 +2121,13 @@ uid 3286,0
 va (VaSet
 font "courier,12,0"
 )
-xt "75750,55700,81350,57000"
+xt "74750,55700,80350,57000"
 st "lowpass2"
-blo "75750,56700"
+blo "74750,56700"
 tm "WireNameMgr"
 )
 )
-on &50
+on &38
 )
 *64 (Wire
 uid 3295,0
@@ -2156,7 +2157,7 @@ pts [
 ]
 )
 start &20
-end &40
+end &48
 sat 32
 eat 32
 stc 0
@@ -2177,7 +2178,7 @@ blo "50750,40700"
 tm "WireNameMgr"
 )
 )
-on &51
+on &39
 )
 *66 (Wire
 uid 3299,0
@@ -2217,7 +2218,7 @@ blo "49700,67800"
 tm "WireNameMgr"
 )
 )
-on &51
+on &39
 )
 ]
 bg "65535,65535,65535"
@@ -2330,7 +2331,7 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "59,4,1688,1058"
-viewArea "-8583,17976,110007,94899"
+viewArea "-8600,18000,102474,90048"
 cachedDiagramExtent "-7000,0,104000,93000"
 pageSetupInfo (PageSetupInfo
 ptrCmd "\\\\ipp://ipp.hevs.ch\\PREA309_HPLJP3005DN,winspool,"
@@ -2357,7 +2358,7 @@ boundaryWidth 0
 )
 hasePageBreakOrigin 1
 pageBreakOrigin "-7000,19000"
-lastUid 3308,0
+lastUid 3387,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0

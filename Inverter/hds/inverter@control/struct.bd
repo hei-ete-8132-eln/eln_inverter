@@ -244,8 +244,8 @@ libraryRefs [
 "Common"
 ]
 )
-version "31.1"
-appVersion "2018.1 (Build 12)"
+version "32.1"
+appVersion "2019.3 (Build 4)"
 noEmbeddedEditors 1
 model (BlockDiag
 VExpander (VariableExpander
@@ -300,19 +300,19 @@ value "/home/francois/Documents/HEVs/ElN/Labs/ElN_inverter/Prefs/../Inverter/hds
 )
 (vvPair
 variable "date"
-value "10/23/19"
+value "12/17/19"
 )
 (vvPair
 variable "day"
-value "Wed"
+value "Tue"
 )
 (vvPair
 variable "day_long"
-value "Wednesday"
+value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "23"
+value "17"
 )
 (vvPair
 variable "designName"
@@ -344,7 +344,7 @@ value "francois"
 )
 (vvPair
 variable "graphical_source_date"
-value "10/23/19"
+value "12/17/19"
 )
 (vvPair
 variable "graphical_source_group"
@@ -356,7 +356,7 @@ value "Aphelia"
 )
 (vvPair
 variable "graphical_source_time"
-value "13:40:46"
+value "13:37:19"
 )
 (vvPair
 variable "group"
@@ -392,7 +392,7 @@ value "D:\\Users\\Syslo\\Chronometer\\Synthesis"
 )
 (vvPair
 variable "mm"
-value "10"
+value "12"
 )
 (vvPair
 variable "module_name"
@@ -400,11 +400,11 @@ value "inverterControl"
 )
 (vvPair
 variable "month"
-value "Oct"
+value "Dec"
 )
 (vvPair
 variable "month_long"
-value "October"
+value "December"
 )
 (vvPair
 variable "p"
@@ -488,7 +488,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "13:40:46"
+value "13:37:19"
 )
 (vvPair
 variable "unit"
@@ -500,7 +500,7 @@ value "francois"
 )
 (vvPair
 variable "version"
-value "2018.1 (Build 12)"
+value "2019.3 (Build 4)"
 )
 (vvPair
 variable "view"
@@ -5541,7 +5541,6 @@ pts [
 uid 3749,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "178000,-4999,179000,-3999"
 )
@@ -5557,7 +5556,6 @@ pts [
 uid 3753,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "178000,3000,179000,4000"
 )
@@ -5573,7 +5571,6 @@ pts [
 uid 3757,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "178000,19000,179000,20000"
 )
@@ -5589,7 +5586,6 @@ pts [
 uid 3755,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "178000,11000,179000,12000"
 )
@@ -5651,7 +5647,6 @@ shape (OrthoPolyLine
 uid 3701,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "168000,4000,178000,4000"
 pts [
@@ -5663,7 +5658,6 @@ start &166
 end &26
 sat 32
 eat 32
-sty 1
 sl "(6)"
 stc 0
 st 0
@@ -5766,7 +5760,6 @@ shape (OrthoPolyLine
 uid 3719,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "168000,-4000,178000,-3999"
 pts [
@@ -5778,7 +5771,6 @@ start &165
 end &20
 sat 32
 eat 32
-sty 1
 sl "(5)"
 stc 0
 st 0
@@ -5844,7 +5836,6 @@ shape (OrthoPolyLine
 uid 3731,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "168000,12000,178000,12000"
 pts [
@@ -5856,7 +5847,6 @@ start &168
 end &32
 sat 32
 eat 32
-sty 1
 sl "(7)"
 stc 0
 st 0
@@ -5922,7 +5912,6 @@ shape (OrthoPolyLine
 uid 3743,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "168000,20000,178000,20000"
 pts [
@@ -5934,7 +5923,6 @@ start &167
 end &38
 sat 32
 eat 32
-sty 1
 sl "(8)"
 stc 0
 st 0
@@ -6631,7 +6619,6 @@ pts [
 uid 9072,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "146000,-5000,147000,-4000"
 )
@@ -6647,7 +6634,6 @@ pts [
 uid 9078,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "146000,3000,147000,4000"
 )
@@ -6663,7 +6649,6 @@ pts [
 uid 9084,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "146000,11000,147000,12000"
 )
@@ -6679,7 +6664,6 @@ pts [
 uid 9090,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "146000,19000,147000,20000"
 )
@@ -6879,7 +6863,6 @@ shape (OrthoPolyLine
 uid 9068,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "136000,-4000,146000,-4000"
 pts [
@@ -6891,7 +6874,6 @@ start &87
 end &197
 sat 32
 eat 32
-sty 1
 sl "(1)"
 stc 0
 st 0
@@ -6920,7 +6902,6 @@ shape (OrthoPolyLine
 uid 9074,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "136000,4000,146000,4000"
 pts [
@@ -6932,7 +6913,6 @@ start &93
 end &198
 sat 32
 eat 32
-sty 1
 sl "(2)"
 stc 0
 st 0
@@ -6961,7 +6941,6 @@ shape (OrthoPolyLine
 uid 9080,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "136000,12000,146000,12000"
 pts [
@@ -6973,7 +6952,6 @@ start &99
 end &199
 sat 32
 eat 32
-sty 1
 sl "(3)"
 stc 0
 st 0
@@ -7002,7 +6980,6 @@ shape (OrthoPolyLine
 uid 9086,0
 va (VaSet
 vasetType 3
-lineWidth 2
 )
 xt "136000,20000,146000,20000"
 pts [
@@ -7014,7 +6991,6 @@ start &105
 end &200
 sat 32
 eat 32
-sty 1
 sl "(4)"
 stc 0
 st 0
@@ -7518,7 +7494,7 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "59,4,1688,1058"
-viewArea "21618,-14010,198500,100725"
+viewArea "21600,-14000,187012,90000"
 cachedDiagramExtent "0,-11600,190900,98000"
 pageSetupInfo (PageSetupInfo
 ptrCmd "\\\\ipp://ipp.hevs.ch\\PREA309_HPLJP3005DN,winspool,"
@@ -7545,7 +7521,7 @@ boundaryWidth 0
 )
 hasePageBreakOrigin 1
 pageBreakOrigin "24000,-12000"
-lastUid 11236,0
+lastUid 11307,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0

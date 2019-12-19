@@ -4432,22 +4432,18 @@ theList "Design Units"
 columns [
 (TreeListVPData_Column
 name "Type"
-displayName ""
 width 140
 )
 (TreeListVPData_Column
 name "Extends"
-displayName ""
 width 100
 )
 (TreeListVPData_Column
 name "Language"
-displayName ""
 width 100
 )
 (TreeListVPData_Column
 name "Time Stamp"
-displayName ""
 width 120
 )
 ]
@@ -5528,6 +5524,16 @@ declHierarchy [
 ]
 activeViewpointIdx 0
 )
+(WorkTab
+name "operators"
+showingHierarchy 0
+openLibs [
+"operators"
+]
+declHierarchy [
+]
+activeViewpointIdx 0
+)
 ]
 ViewpointsOnOutlookBar [
 "Default Viewpoint"
@@ -5551,11 +5557,11 @@ size 59
 ]
 displayHierarchy 0
 xPos 1739
-yPos 58
+yPos 79
 width 1066
 height 937
 activeSidePanelTab 2
-activeLibraryTab 3
+activeLibraryTab 4
 sidePanelSize 280
 showUnixHiddenFiles 0
 componentBrowserXpos 59

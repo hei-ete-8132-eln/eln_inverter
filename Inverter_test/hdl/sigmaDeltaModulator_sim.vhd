@@ -1,39 +1,30 @@
 ARCHITECTURE sim OF sigmaDeltaModulator IS
 
-  constant samplingPeriod: time := 1.0/samplingFrequency * 1 sec;
-  signal pwm1, pwm2: std_uLogic;
-  signal accumulator1, lowpassOutput1: real := 0.0;
-  signal accumulator2, lowpassOutput2: real := 0.0;
+  constant samplingPeriod: time := 1.0/modulationFrequency * 1 sec;
+  constant a1 : real := 0.3;
+  constant a2 : real := 0.7;
+  constant c1 : real := 2.0;
+  constant c2 : real := 1.0;
+  signal vIn: real;
+  signal accumulator1, accumulator2: real := 0.0;
+  signal forwardSum, quantized: real := 1.0;
 
 BEGIN
   ------------------------------------------------------------------------------
-                                                               -- remove overlap
-  pwm1 <= '1' when switch1High = '1'
-    else '0' when switch1Low = '1';
-  pwm2 <= '1' when switch2High = '1'
-    else '0' when switch2Low = '1';
+                                                   -- differential input voltage
+  vin <= vInP - vInN;
 
   ------------------------------------------------------------------------------
                                                                       -- lowpass
   integrators: process
   begin
     wait for samplingPeriod;
-    if pwm1 = '1' then
-      accumulator1 <= accumulator1 - lowpassOutput1 + 1.0;
-    else
-      accumulator1 <= accumulator1 - lowpassOutput1;
-    end if;
-    if pwm2 = '1' then
-      accumulator2 <= accumulator2 - lowpassOutput2 + 1.0;
-    else
-      accumulator2 <= accumulator2 - lowpassOutput2;
-    end if;
+    accumulator1 <= accumulator1 + a1 * (vIn - vRef*quantized);
+    accumulator2 <= accumulator2 + a2 * accumulator1;
   end process integrators;
 
-  lowpassOutput1 <= accumulator1 / 2.0**lowpassShift;
-  lowpass1 <= supplyVoltage * lowpassOutput1;
-  lowpassOutput2 <= accumulator2 / 2.0**lowpassShift;
-  lowpass2 <= supplyVoltage * lowpassOutput2;
-  lowpassDiff <= supplyVoltage * (lowpassOutput1 - lowpassOutput2);
+  forwardSum <= vIn + c1*accumulator1 + c2*accumulator2;
+  quantized <= 1.0 when forwardSum > 0.0 else -1.0;
+  dOut <= '1' when quantized > 0.0 else '0';
 
 END ARCHITECTURE sim;

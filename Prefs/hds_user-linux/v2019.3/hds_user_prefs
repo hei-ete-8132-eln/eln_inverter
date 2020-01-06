@@ -2502,7 +2502,7 @@ hdsWorkspaceLocation ""
 relativeLibraryRootDir ""
 vmLabelLatestDontAskAgain 0
 vmLabelWorkspaceDontAskAgain 0
-logWindowGeometry "932x964-10+19"
+logWindowGeometry "932x964-7+39"
 diagramBrowserTabNo 0
 showContentFirstTime 0
 )
@@ -5542,8 +5542,8 @@ size 59
 )
 ]
 displayHierarchy 0
-xPos 197
-yPos 54
+xPos 1743
+yPos 150
 width 1066
 height 937
 activeSidePanelTab 2

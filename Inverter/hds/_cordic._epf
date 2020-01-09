@@ -1,2 +1,2 @@
-DEFAULT_FILE atom cordic_RTL.vhd
-DEFAULT_ARCHITECTURE atom RTL
+DEFAULT_FILE atom cordic/struct.bd
+DEFAULT_ARCHITECTURE atom struct

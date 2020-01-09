@@ -2,8 +2,10 @@ ARCHITECTURE test OF inverterControl_tester IS
                                                             -- clock and enables
   constant clockPeriod: time := 1.0/clockFrequency * 1 sec;
   signal sClock: std_uLogic := '1';
-                                                                     -- controls
   constant mainsPeriod: time := 1.0/mainsFrequency * 1 sec;
+  signal sMains: std_uLogic := '1';
+  signal mainsDelayed: std_uLogic := '0';
+                                                                     -- controls
   constant modePeriod: time := 2*mainsPeriod;
   signal threeLevel_int: std_uLogic;
                                                                       -- lowpass
@@ -27,6 +29,10 @@ BEGIN
 
   sClock <= not sClock after clockPeriod/2;
   clock <= transport sClock after 9.0/10.0 * clockPeriod;
+
+  sMains <= not sMains after mainsPeriod/2;
+  mainsDelayed <= transport sMains after 1.0/8.0 * mainsPeriod;
+  mainsTriggered <= mainsDelayed;
 
   ------------------------------------------------------------------------------
                                                                      -- controls

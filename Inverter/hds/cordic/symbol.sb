@@ -16,12 +16,12 @@ libraryRefs [
 "ieee"
 ]
 )
-version "26.1"
-appVersion "2018.1 (Build 12)"
+version "27.1"
+appVersion "2019.3 (Build 4)"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 2010,0
+suid 2011,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -32,7 +32,7 @@ port (LogicalPort
 decl (Decl
 n "reset"
 t "std_ulogic"
-o 2
+o 4
 suid 3,0
 )
 )
@@ -43,7 +43,7 @@ port (LogicalPort
 decl (Decl
 n "clock"
 t "std_ulogic"
-o 1
+o 2
 suid 1,0
 )
 )
@@ -89,7 +89,7 @@ decl (Decl
 n "sine"
 t "signed"
 b "(signalBitNb-1 downto 0)"
-o 4
+o 5
 suid 2007,0
 )
 )
@@ -97,12 +97,11 @@ uid 371,0
 )
 *17 (LogPort
 port (LogicalPort
-m 1
 decl (Decl
-n "cosine"
-t "signed"
+n "amplitudeControl"
+t "unsigned"
 b "(signalBitNb-1 downto 0)"
-o 3
+o 1
 suid 2009,0
 )
 )
@@ -114,7 +113,7 @@ decl (Decl
 n "phase"
 t "unsigned"
 b "(phaseBitNb-1 downto 0)"
-o 5
+o 3
 suid 2010,0
 )
 )
@@ -123,6 +122,8 @@ uid 560,0
 ]
 )
 pdm (PhysicalDM
+displayShortBounds 1
+editShortBounds 1
 uid 220,0
 optionalChildren [
 *19 (Sheet
@@ -182,13 +183,13 @@ uid 186,0
 )
 *26 (MRCItem
 litem &16
-pos 2
+pos 3
 dimension 20
 uid 372,0
 )
 *27 (MRCItem
 litem &17
-pos 3
+pos 2
 dimension 20
 uid 531,0
 )
@@ -324,15 +325,17 @@ uid 562,0
 )
 *51 (LogGeneric
 generic (GiElement
-name "amplitude"
+name "sineAmplitude"
 type "real"
 value "1.0"
 )
-uid 634,0
+uid 806,0
 )
 ]
 )
 pdm (PhysicalDM
+displayShortBounds 1
+editShortBounds 1
 uid 223,0
 optionalChildren [
 *52 (Sheet
@@ -394,7 +397,7 @@ uid 563,0
 litem &51
 pos 2
 dimension 20
-uid 635,0
+uid 807,0
 )
 ]
 )
@@ -515,19 +518,19 @@ value "/home/francois/Documents/HEVs/ElN/Labs/ElN_inverter/Prefs/../Inverter/hds
 )
 (vvPair
 variable "date"
-value "10/23/19"
+value "01/09/20"
 )
 (vvPair
 variable "day"
-value "Wed"
+value "Thu"
 )
 (vvPair
 variable "day_long"
-value "Wednesday"
+value "Thursday"
 )
 (vvPair
 variable "dd"
-value "23"
+value "09"
 )
 (vvPair
 variable "designName"
@@ -559,7 +562,7 @@ value "francois"
 )
 (vvPair
 variable "graphical_source_date"
-value "10/23/19"
+value "01/09/20"
 )
 (vvPair
 variable "graphical_source_group"
@@ -571,7 +574,7 @@ value "Aphelia"
 )
 (vvPair
 variable "graphical_source_time"
-value "13:23:20"
+value "08:46:05"
 )
 (vvPair
 variable "group"
@@ -607,7 +610,7 @@ value "D:\\Users\\Syslo\\Chronometer\\Synthesis"
 )
 (vvPair
 variable "mm"
-value "10"
+value "01"
 )
 (vvPair
 variable "module_name"
@@ -615,11 +618,11 @@ value "cordic"
 )
 (vvPair
 variable "month"
-value "Oct"
+value "Jan"
 )
 (vvPair
 variable "month_long"
-value "October"
+value "January"
 )
 (vvPair
 variable "p"
@@ -699,7 +702,7 @@ value "symbol"
 )
 (vvPair
 variable "time"
-value "13:23:20"
+value "08:46:05"
 )
 (vvPair
 variable "unit"
@@ -711,7 +714,7 @@ value "francois"
 )
 (vvPair
 variable "version"
-value "2018.1 (Build 12)"
+value "2019.3 (Build 4)"
 )
 (vvPair
 variable "view"
@@ -719,11 +722,11 @@ value "symbol"
 )
 (vvPair
 variable "year"
-value "2019"
+value "2020"
 )
 (vvPair
 variable "yy"
-value "19"
+value "20"
 )
 ]
 )
@@ -753,9 +756,9 @@ f (Text
 uid 95,0
 va (VaSet
 )
-xt "41000,20500,44400,21700"
+xt "41000,20500,44000,21500"
 st "clock"
-blo "41000,21500"
+blo "41000,21300"
 tm "CptPortNameMgr"
 )
 )
@@ -764,14 +767,14 @@ uid 96,0
 va (VaSet
 font "courier,9,0"
 )
-xt "2000,9000,17000,9900"
-st "clock  : IN     std_ulogic  ;"
+xt "2000,9900,22000,10800"
+st "clock            : IN     std_ulogic  ;"
 )
 thePort (LogicalPort
 decl (Decl
 n "clock"
 t "std_ulogic"
-o 1
+o 2
 suid 1,0
 )
 )
@@ -796,9 +799,9 @@ f (Text
 uid 130,0
 va (VaSet
 )
-xt "41000,22500,44300,23700"
+xt "41000,22500,44000,23500"
 st "reset"
-blo "41000,23500"
+blo "41000,23300"
 tm "CptPortNameMgr"
 )
 )
@@ -807,14 +810,14 @@ uid 131,0
 va (VaSet
 font "courier,9,0"
 )
-xt "2000,10800,17000,11700"
-st "reset  : IN     std_ulogic  ;"
+xt "2000,11700,22000,12600"
+st "reset            : IN     std_ulogic  ;"
 )
 thePort (LogicalPort
 decl (Decl
 n "reset"
 t "std_ulogic"
-o 2
+o 4
 suid 3,0
 )
 )
@@ -829,7 +832,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "56000,16625,56750,17375"
+xt "56000,14625,56750,15375"
 )
 tg (CPTG
 uid 366,0
@@ -839,10 +842,10 @@ f (Text
 uid 367,0
 va (VaSet
 )
-xt "52200,16400,55000,17600"
+xt "52600,14400,55000,15400"
 st "sine"
 ju 2
-blo "55000,17400"
+blo "55000,15200"
 tm "CptPortNameMgr"
 )
 )
@@ -851,8 +854,8 @@ uid 368,0
 va (VaSet
 font "courier,9,0"
 )
-xt "2000,12600,26000,13500"
-st "sine   : OUT    signed (signalBitNb-1 downto 0)"
+xt "2000,12600,31000,13500"
+st "sine             : OUT    signed (signalBitNb-1 downto 0)"
 )
 thePort (LogicalPort
 m 1
@@ -860,7 +863,7 @@ decl (Decl
 n "sine"
 t "signed"
 b "(signalBitNb-1 downto 0)"
-o 4
+o 5
 suid 2007,0
 )
 )
@@ -869,26 +872,25 @@ suid 2007,0
 uid 525,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 526,0
+uid 705,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "56000,18625,56750,19375"
+xt "39250,16625,40000,17375"
 )
 tg (CPTG
 uid 527,0
 ps "CptPortTextPlaceStrategy"
-stg "RightVerticalLayoutStrategy"
+stg "VerticalLayoutStrategy"
 f (Text
 uid 528,0
 va (VaSet
 )
-xt "51000,18400,55000,19600"
-st "cosine"
-ju 2
-blo "55000,19400"
+xt "41200,16500,51400,17500"
+st "amplitudeControl"
+blo "41200,17300"
 tm "CptPortNameMgr"
 )
 )
@@ -897,16 +899,15 @@ uid 529,0
 va (VaSet
 font "courier,9,0"
 )
-xt "2000,11700,27000,12600"
-st "cosine : OUT    signed (signalBitNb-1 downto 0) ;"
+xt "2000,9000,33000,9900"
+st "amplitudeControl : IN     unsigned (signalBitNb-1 downto 0) ;"
 )
 thePort (LogicalPort
-m 1
 decl (Decl
-n "cosine"
-t "signed"
+n "amplitudeControl"
+t "unsigned"
 b "(signalBitNb-1 downto 0)"
-o 3
+o 1
 suid 2009,0
 )
 )
@@ -921,7 +922,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "39250,16625,40000,17375"
+xt "39250,14625,40000,15375"
 )
 tg (CPTG
 uid 557,0
@@ -931,9 +932,9 @@ f (Text
 uid 558,0
 va (VaSet
 )
-xt "41000,16400,44700,17600"
+xt "41000,14400,44000,15400"
 st "phase"
-blo "41000,17400"
+blo "41000,15200"
 tm "CptPortNameMgr"
 )
 )
@@ -942,15 +943,15 @@ uid 559,0
 va (VaSet
 font "courier,9,0"
 )
-xt "2000,9900,27500,10800"
-st "phase  : IN     unsigned (phaseBitNb-1 downto 0) ;"
+xt "2000,10800,32500,11700"
+st "phase            : IN     unsigned (phaseBitNb-1 downto 0) ;"
 )
 thePort (LogicalPort
 decl (Decl
 n "phase"
 t "unsigned"
 b "(phaseBitNb-1 downto 0)"
-o 5
+o 3
 suid 2010,0
 )
 )
@@ -964,7 +965,7 @@ fg "0,65535,0"
 lineColor "0,32896,0"
 lineWidth 2
 )
-xt "40000,13000,56000,25000"
+xt "40000,11000,56000,25000"
 )
 oxt "15000,6000,31000,20000"
 biTextGroup (BiTextGroup
@@ -1000,12 +1001,12 @@ uid 15,0
 va (VaSet
 font "courier,9,0"
 )
-xt "40000,29400,53500,33900"
+xt "40000,27500,54500,32000"
 st "Generic Declarations
 
-phaseBitNb  positive 16   
-signalBitNb positive 16   
-amplitude   real     1.0  "
+phaseBitNb    positive 16   
+signalBitNb   positive 16   
+sineAmplitude real     1.0  "
 )
 header "Generic Declarations"
 showHdrWhenContentsEmpty 1
@@ -1022,7 +1023,7 @@ type "positive"
 value "16"
 )
 (GiElement
-name "amplitude"
+name "sineAmplitude"
 type "real"
 value "1.0"
 )
@@ -1059,7 +1060,7 @@ va (VaSet
 fg "0,0,32768"
 bg "0,0,32768"
 )
-xt "36200,48000,53000,49000"
+xt "36200,48000,52400,49000"
 st "
 by %user on %dd %month %year
 "
@@ -1407,17 +1408,22 @@ tm "PackageList"
 )
 ]
 )
-windowSize "152,36,1441,886"
-viewArea "-1000,-1000,77110,50684"
+windowSize "96,78,1385,928"
+viewArea "-1000,-1000,56564,37232"
 cachedDiagramExtent "0,0,73000,49000"
 pageSetupInfo (PageSetupInfo
 ptrCmd ""
 toPrinter 1
-xMargin 49
-yMargin 49
+xMargin 48
+yMargin 48
+paperWidth 595
+paperHeight 842
+unixPaperWidth 595
+unixPaperHeight 842
 windowsPaperWidth 761
 windowsPaperHeight 1077
-paperType "Letter (8.5\" x 11\")"
+paperType "A4  (210mm x 297mm)"
+unixPaperName "A4  (210mm x 297mm)"
 windowsPaperName "A4"
 exportedDirectories [
 "$HDS_PROJECT_DIR/HTMLExport"
@@ -1695,6 +1701,8 @@ xt "0,6600,0,6600"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 658,0
+lastUid 1083,0
+okToSyncOnLoad 1
+OkToSyncGenericsOnLoad 1
 activeModelName "Symbol"
 )

@@ -264,7 +264,7 @@ defaultUserLibRootDir ""
 projectSetupRootDir ""
 defaultPackages "LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-USE ieee.std_logic_arith.all;
+USE ieee.numeric_std.all;
 "
 defaultVerilogPackages ""
 defaultFont "courier,10,0"
@@ -2502,7 +2502,7 @@ hdsWorkspaceLocation ""
 relativeLibraryRootDir ""
 vmLabelLatestDontAskAgain 0
 vmLabelWorkspaceDontAskAgain 0
-logWindowGeometry "932x964-7+39"
+logWindowGeometry "932x964-18+31"
 diagramBrowserTabNo 0
 showContentFirstTime 0
 )
@@ -4424,22 +4424,18 @@ theList "Design Units"
 columns [
 (TreeListVPData_Column
 name "Type"
-displayName ""
 width 140
 )
 (TreeListVPData_Column
 name "Extends"
-displayName ""
 width 100
 )
 (TreeListVPData_Column
 name "Language"
-displayName ""
 width 100
 )
 (TreeListVPData_Column
 name "Time Stamp"
-displayName ""
 width 120
 )
 ]
@@ -5542,8 +5538,8 @@ size 59
 )
 ]
 displayHierarchy 0
-xPos 1743
-yPos 150
+xPos 59
+yPos 71
 width 1066
 height 937
 activeSidePanelTab 2

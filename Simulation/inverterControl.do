@@ -22,12 +22,13 @@ add wave -noupdate -group {Non-overlapping controls} /invertercontrol_tb/pwm2Low
 add wave -noupdate -expand -group {Filtered outputs} -format Analog-Step -height 25 -max 12.0 /invertercontrol_tb/lowpass1
 add wave -noupdate -expand -group {Filtered outputs} -format Analog-Step -height 25 -max 12.0 /invertercontrol_tb/lowpass2
 add wave -noupdate -expand -group {Filtered outputs} -format Analog-Step -height 50 -max 12.0 -min -12.0 /invertercontrol_tb/lowpassDiff
-add wave -noupdate -expand -group Measurements /invertercontrol_tb/I_tester/measuredFrequency
-add wave -noupdate -expand -group Measurements -radix unsigned -radixshowbase 0 /invertercontrol_tb/I_tester/measuredDeadTimeNs
-add wave -noupdate -expand -group {Amplitude feedback} /invertercontrol_tb/diffAmplitude
-add wave -noupdate -expand -group {Amplitude feedback} -format Analog-Step -height 50 -max 500.0 -min -500.0 -radix decimal -radixshowbase 0 /invertercontrol_tb/I_DUT/measuredAmplitude
+add wave -noupdate -group Measurements /invertercontrol_tb/I_tester/measuredFrequency
+add wave -noupdate -group Measurements -radix unsigned -radixshowbase 0 /invertercontrol_tb/I_tester/measuredDeadTimeNs
+add wave -noupdate -group {Amplitude feedback} /invertercontrol_tb/mainsTriggered
+add wave -noupdate -group {Amplitude feedback} /invertercontrol_tb/diffAmplitude
+add wave -noupdate -group {Amplitude feedback} -format Analog-Step -height 50 -max 500.0 -min -500.0 -radix decimal -radixshowbase 0 /invertercontrol_tb/I_DUT/measuredAmplitude
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 2} {6601935793 ps} 0}
+WaveRestoreCursors {{Cursor 2} {0 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 331
 configure wave -valuecolwidth 89

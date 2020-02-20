@@ -69,10 +69,10 @@ PACKAGE BODY testUtils IS
   -- formatted string output: padding and justifying
   ------------------------------------------------------------------------------
   function pad(
-    right_justify   : boolean;
-    fill_char       : character;
+    value           : string;
     string_length   : natural;
-    value           : string
+    fill_char       : character := ' ';
+    right_justify   : boolean := false
   ) return string is
     variable value_line : line;
     variable out_line : line;
@@ -111,14 +111,6 @@ PACKAGE BODY testUtils IS
     end if;
     deallocate(value_line);
     return(out_line.all);
-  end pad;
-
-  function pad(
-    string_length   : natural;
-    value           : string
-  ) return string is
-  begin
-    return(pad(false, ' ', string_length, value));
   end pad;
 
   ------------------------------------------------------------------------------
@@ -189,7 +181,7 @@ PACKAGE BODY testUtils IS
     variable output_line: line := new string'("");
     variable is_separator, was_separator : boolean := false;
   begin
-    rm_side_separators(input_line);  
+    rm_side_separators(input_line);
     for character_index in input_line'range loop
       is_separator := false;
       for separator_index in separators'range loop
@@ -466,7 +458,7 @@ PACKAGE BODY testUtils IS
     if string_length = 0 then
       return(value_line.all);
     else
-      return(pad(right_justify, fill_char, string_length, value_line.all));
+      return(pad(value_line.all, string_length, fill_char, right_justify));
     end if;
   end sprintf_d;
 
@@ -506,7 +498,7 @@ PACKAGE BODY testUtils IS
     if string_length = 0 then
       return(value_line.all);
     else
-      return(pad(right_justify, fill_char, string_length, value_line.all));
+      return(pad(value_line.all, string_length, fill_char, right_justify));
     end if;
   end sprintf_f;
 
@@ -663,14 +655,14 @@ PACKAGE BODY testUtils IS
     get_format_items(format, right_justify, add_sign, fill_char,
                      bit_string_length, point_precision, format_type);
     if format_type.all = "b" then
-      return(pad(right_justify, fill_char, bit_string_length, sprintf_b(value)));
+      return(pad(sprintf_b(value), bit_string_length, fill_char, right_justify));
     elsif format_type.all = "d" then
       return(sprintf_d(right_justify, add_sign, fill_char, bit_string_length, to_integer(unsigned(value))));
     elsif (format_type.all = "X") or (format_type.all = "x") then
       if format_type.all = "X" then
-        return(pad(right_justify, fill_char, bit_string_length, sprintf_X(true, value)));
+        return(pad(sprintf_X(true, value), bit_string_length, fill_char, right_justify));
       else
-        return(lc(pad(right_justify, fill_char, bit_string_length, sprintf_X(true, value))));
+        return(lc(pad(sprintf_X(true, value), bit_string_length, fill_char, right_justify)));
       end if;
     else
       return("Not a std_ulogic_vector format: '" & format_type.all & "'");
@@ -736,7 +728,7 @@ PACKAGE BODY testUtils IS
       fill_char := '1';
     end if;
     if format_type.all = "b" then
-      return(pad(right_justify, fill_char, bit_string_length, sprintf_b(std_ulogic_vector(value))));
+      return(pad(sprintf_b(std_ulogic_vector(value)), bit_string_length, fill_char, right_justify));
     elsif format_type.all = "d" then
       return(sprintf_d(right_justify, add_sign, fill_char, bit_string_length, to_integer(signed(value))));
     elsif (format_type.all = "X") or (format_type.all = "x") then
@@ -744,9 +736,9 @@ PACKAGE BODY testUtils IS
         fill_char := 'F';
       end if;
       if format_type.all = "X" then
-        return(pad(right_justify, fill_char, bit_string_length, sprintf_X(true, std_ulogic_vector(value))));
+        return(pad(sprintf_X(true, std_ulogic_vector(value)), bit_string_length, fill_char, right_justify));
       else
-        return(lc(pad(right_justify, fill_char, bit_string_length, sprintf_X(true, std_ulogic_vector(value)))));
+        return(lc(pad(sprintf_X(true, std_ulogic_vector(value)), bit_string_length, fill_char, right_justify)));
       end if;
     else
       return("Not a signed format: '" & format_type.all & "'");

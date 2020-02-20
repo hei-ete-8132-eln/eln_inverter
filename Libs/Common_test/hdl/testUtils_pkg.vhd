@@ -25,15 +25,10 @@ PACKAGE testUtils IS
   procedure uc(value : inout line);
                                             -- expand a string to a given length
   function pad(
-    right_justify   : boolean;
-    fill_char       : character;
+    value           : string;
     string_length   : natural;
-    value           : string
-  ) return string;
-
-  function pad(
-    string_length   : natural;
-    value           : string
+    fill_char       : character := ' ';
+    right_justify   : boolean := false
   ) return string;
                      -- remove separator characters at beginning and end of line
   procedure rm_side_separators(

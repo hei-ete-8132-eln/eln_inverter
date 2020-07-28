@@ -4,8 +4,8 @@
 # hdl_designer.bash - Starts HDL designer
 #
 base_directory="$(dirname "$(readlink -f "$0")")"
-pushd $base_directory
 base_directory="$base_directory/.."
+pushd $base_directory
 
 SEPARATOR='--------------------------------------------------------------------------------'
 INDENT='  '
@@ -143,7 +143,7 @@ fi
 #-------------------------------------------------------------------------------
 # Launch application
 #
-hdldesigner &
+hdl_designer &
 
 #-------------------------------------------------------------------------------
 # Exit

@@ -1,2 +1,2 @@
 DEFAULT_ARCHITECTURE atom sim
-DEFAULT_FILE atom registerULogicVector_sim1.vhd
+DEFAULT_FILE atom registerLogicVector_sim.vhd

@@ -1,2 +1,2 @@
 DEFAULT_ARCHITECTURE atom sim
-DEFAULT_FILE atom DFFE_sim1.vhd
+DEFAULT_FILE atom DFFE_pre_sim.vhd
